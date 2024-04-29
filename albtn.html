@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position absolute/ click 이벤트 / transform </title>
+    <style>
+        #animationAllbtn{
+            position: absolute;
+            border: 0;
+            width: 2.8rem;
+            height: 1.5rem;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background-color: yellow;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        #animationAllbtn:before{
+            top: 0;
+        }
+        
+        #animationAllbtn span{
+            display: block;
+            height:3px;
+            background-color: black;
+            width: 100%;
+            transition: 0.5s;
+        }
+        #animationAllbtn:before,
+        #animationAllbtn:after{
+            content: "";
+            display: block;
+            height:3px;
+            background-color: black;
+            position: absolute;
+            left: 0;
+            width: 100%;
+        }
+        #animationAllbtn:after{
+            bottom: 0;
+        }
+        #animationAllbtn.show span{
+            width: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="animationAllbtn">
+        <span></span>
+    </button>
+    <script>
+    //     window.addEventListener('load', function(){
+    //         document.getElementById("animationAllbtn").addEventListener('click', function(){
+    //           alert("ㅗ")
+    //    })
+    //     })
+        //document.body
+        //document.head
+        //화면의 아이디가 animationAllbtn 객체를 클릭하면 경고창이떠라
+        document.getElementById("animationAllbtn").addEventListener('click', function(){
+                document.getElementById("animationAllbtn").classList.add("show");
+                // document.body.classList="show action popup"
+       })
+
+
+       //아이디가 gnb객체를 클릭했을때 '니 혼자 자바스크립트'가 나오도록 한다.
+    //    document.getElementById("gnb").addEventListener('click', function(){
+    //           alert("나 혼자 자바스크립트")
+    //         })
+
+    //아이디가 all meun를 클릭하면
+    //아이디가 gnb에게 나타난다
+    // document.getElementById("all menu").addEventListener('click', function(){
+    //     document.getElementById("gnb").style.dipaly = "block";
+        //아이디가 close에게 배경색을 빨강으로 처리
+    //     document.getElementById("close").style.backgroundColor = "red";
+    // })
+
+
+
+    </script>
+</body>
+</html>
